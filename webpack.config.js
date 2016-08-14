@@ -26,6 +26,8 @@ var config = {
     ]
   },
 
+  devtool: "cheap-module-eval-source-map",
+
   plugins: [
     new HtmlWebpackPlugin({
       title: "Typescript Boilerplate",

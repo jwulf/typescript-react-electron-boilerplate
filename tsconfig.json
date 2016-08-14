@@ -6,7 +6,8 @@
     "outDir": "./build/",
     "preserveConstEnums": true,
     "removeComments": true,
-    "target": "ES5"
+    "target": "ES5",
+    "sourceMap": true
   },
   "exclude": [
     "node_modules",
