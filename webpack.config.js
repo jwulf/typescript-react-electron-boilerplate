@@ -1,9 +1,10 @@
 var path = require("path");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var config = {
 
   entry: [
-      "./src/app.tsx"
+      path.resolve(__dirname, "src", "app.tsx")
   ],
 
   output: {
@@ -23,7 +24,15 @@ var config = {
         exclude: /node_modules/
       }
     ]
-  }
+  },
+
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: "Typescript Boilerplate",
+      template: path.resolve(__dirname, "src", "index.ejs")
+    })
+  ]
+
 };
 
 module.exports = config;

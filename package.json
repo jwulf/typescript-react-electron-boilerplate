@@ -4,6 +4,7 @@
     "build": "webpack"
   },
   "devDependencies": {
+    "html-webpack-plugin": "^2.22.0",
     "ts-loader": "^0.8.2",
     "tslint": "^3.14.0",
     "typescript": "^1.8.10",
