@@ -1,0 +1,8 @@
+# Build artifacts
+build/
+
+# VSCode database files
+*.VC.db*
+
+# Project deps
+node_modules/
