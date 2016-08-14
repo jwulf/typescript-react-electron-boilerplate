@@ -4,7 +4,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var config = {
 
   entry: [
-      path.resolve(__dirname, "src", "app.tsx")
+      path.resolve(__dirname, "src", "index.tsx")
   ],
 
   output: {
