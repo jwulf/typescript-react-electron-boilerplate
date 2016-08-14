@@ -3,7 +3,7 @@ import { Todo } from '../types/state.ts'
 import { isType } from '../utils/actions.ts'
 import { addTodo, toggleTodo } from '../actions/actionCreators.ts'
 
-function todos(todos: Todo[] = [], action: Action<any>): Todo[] {
+function todos(todos: Todo[], action: Action<any>): Todo[] {
     if (isType(action, addTodo)) {
 
         return [
