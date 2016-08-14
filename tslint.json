@@ -1,5 +1,7 @@
 {
 	"rules": {
+		"quotemark": [true, "single", "avoid-escape"],
+		"semicolon": [true, "never"],
 		"no-unused-expression": true,
 		"no-unreachable": true,
 		"no-duplicate-variable": true,
@@ -7,15 +9,6 @@
 		"no-unused-variable": true,
 		"curly": true,
 		"class-name": true,
-		"semicolon": [true],
-		"triple-equals": true,
-		"no-unexternalized-strings": [
-			true,
-			{
-				"signatures": ["localize", "nls.localize"],
-				"keyIndex": 0,
-				"messageIndex": 1
-			}
-		]
+		"triple-equals": true
 	}
 }
