@@ -1,11 +1,13 @@
-export type VisibilityFilter = 'SHOW_ALL' | 'SHOW_COMPLETED' | 'SHOW_ACTIVE'
+export type IVisibilityFilter = 'SHOW_ALL' | 'SHOW_COMPLETED' | 'SHOW_ACTIVE'
 
-export interface Todo {
+export interface ITodo {
+    id: number
     text: string
     completed: boolean
 }
 
-export interface State {
-    visibilityFilter: VisibilityFilter
-    todos: Todo[]
+export interface IState {
+    visibilityFilter: IVisibilityFilter
+    todos: ITodo[]
+    nextTodoId: number
 }

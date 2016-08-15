@@ -1,5 +1,5 @@
 // https://github.com/acdlite/flux-standard-action
-export interface Action<T>{
+export interface IAction<T>{
   type: string
   payload: T
   error?: boolean

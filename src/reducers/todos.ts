@@ -1,14 +1,15 @@
-import { Action } from '../types/actions.ts'
-import { Todo } from '../types/state.ts'
+import { IAction } from '../types/actions.ts'
+import { ITodo } from '../types/state.ts'
 import { isType } from '../utils/actions.ts'
 import { addTodo, toggleTodo } from '../actions/actionCreators.ts'
 
-function todos(todos: Todo[], action: Action<any>): Todo[] {
+function todos(todos: ITodo[], action: IAction<any>): ITodo[] {
     if (isType(action, addTodo)) {
 
         return [
             ...todos,
             {
+                id: action.payload.id,
                 text: action.payload.text,
                 completed: false
             }
@@ -19,7 +20,7 @@ function todos(todos: Todo[], action: Action<any>): Todo[] {
 
     if (isType(action, toggleTodo)) {
 
-        return todos.map((todo: Todo, index: number): Todo => {
+        return todos.map((todo: ITodo, index: number): ITodo => {
                 if (index === action.payload.index) {
                     return Object.assign({}, todo, {
                         completed: !todo.completed

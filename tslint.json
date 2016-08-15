@@ -1,6 +1,6 @@
 {
 	"rules": {
-		"quotemark": [true, "single", "avoid-escape"],
+		"quotemark": [true, "single", "avoid-escape", "jsx-double"],
 		"semicolon": [true, "never"],
 		"no-unused-expression": true,
 		"no-unreachable": true,

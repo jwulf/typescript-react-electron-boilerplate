@@ -15,11 +15,11 @@
 //    }
 //
 
-import { Action } from '../types/actions.ts'
+import { IAction } from '../types/actions.ts'
 
 interface ActionCreator<P> {
   type: string;
-  (payload: P): Action<P>
+  (payload: P): IAction<P>
 }
 
 const actionTypes: any = {}
@@ -31,12 +31,12 @@ export function actionCreator<P>(type: string): ActionCreator<P> {
   actionTypes[type] = true
 
   return Object.assign(
-    (payload: P): Action<P> => ({type, payload}),
+    (payload: P): IAction<P> => ({type, payload}),
     {type}
   )
 }
 
-export function isType<P>(action: Action<any>,
-                          actionCreator: ActionCreator<P>): action is Action<P> {
+export function isType<P>(action: IAction<any>,
+                          actionCreator: ActionCreator<P>): action is IAction<P> {
   return action.type === actionCreator.type
 }
