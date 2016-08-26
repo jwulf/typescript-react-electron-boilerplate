@@ -1,10 +1,9 @@
 import * as React from 'react'
 
 interface LinkProps {
-    active?: boolean
-    children?: any
-    onClick?: () => void
-    filter: string
+    active: boolean
+    children: any
+    onClick: () => void
 }
 
 const Link: React.StatelessComponent<LinkProps>  = ({ active, children, onClick }) => {

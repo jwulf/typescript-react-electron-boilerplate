@@ -3,8 +3,8 @@ import { ITodo } from '../types/state'
 import Todo from './Todo'
 
 interface TodoListProps {
-    todos?: ITodo[]
-    onTodoClick?: (id: number) => void
+    todos: ITodo[]
+    onTodoClick: (id: number) => void
 }
 
 const TodoList: React.StatelessComponent<TodoListProps> = ({ todos, onTodoClick }) => (

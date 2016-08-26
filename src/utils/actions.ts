@@ -15,7 +15,7 @@
 //    }
 //
 
-import { IAction } from '../types/actions.ts'
+import { IAction } from '../types/actions'
 
 interface ActionCreator<P> {
   type: string;

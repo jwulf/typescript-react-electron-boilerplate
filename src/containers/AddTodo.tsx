@@ -10,8 +10,8 @@ const mapStateToProps = (state: IState): {nextTodoId: number} => {
 }
 
 interface AddTodoProps {
-    dispatch?: Function
-    nextTodoId?: number
+    dispatch: Function
+    nextTodoId: number
 }
 
 let AddTodo: React.StatelessComponent<AddTodoProps> = ({ dispatch, nextTodoId }) => {
@@ -38,8 +38,6 @@ let AddTodo: React.StatelessComponent<AddTodoProps> = ({ dispatch, nextTodoId })
   )
 }
 
-AddTodo = connect(
-    mapStateToProps
+export default connect(
+  mapStateToProps
 )(AddTodo)
-
-export default AddTodo

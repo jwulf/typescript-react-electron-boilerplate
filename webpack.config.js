@@ -1,40 +1,29 @@
-var path = require("path");
+var webpack = require('webpack');
+var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-var config = {
-
+module.exports = {
+  devtool: 'eval',
   entry: [
-      path.resolve(__dirname, "src", "index.tsx")
+    'index.tsx'
   ],
-
   output: {
-    path: path.resolve(__dirname, "build"),
-    filename: "bundle.js"
+    filename: 'bundle.js',
+    path: path.resolve('build')
   },
-
   resolve: {
-    extensions: ["", ".ts", ".tsx", ".js"]
+    extensions: ['', '.ts', '.tsx', '.js', '.jsx'],
+    modulesDirectories: ['src', 'node_modules'],
   },
-
   module: {
     loaders: [
-      {
-        test: /\.tsx?$/,
-        loader: "ts-loader",
-        exclude: /node_modules/
-      }
+      { test: /\.tsx?$/, loaders: ['babel', 'ts-loader'] }
     ]
   },
-
-  devtool: "cheap-module-eval-source-map",
-
   plugins: [
     new HtmlWebpackPlugin({
       title: "Typescript Boilerplate",
       template: path.resolve(__dirname, "src", "index.ejs")
     })
   ]
-
 };
-
-module.exports = config;
