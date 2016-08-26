@@ -4,7 +4,7 @@
   "main": "main.js",
   "scripts": {
     "build": "webpack",
-    "start": "node server.js"
+    "start": "webpack-dashboard -- node server.js"
   },
   "devDependencies": {
     "@types/react": "^0.14.33",
@@ -22,6 +22,7 @@
     "tslint": "^3.14.0",
     "typescript": "^2.1.0-dev.20160826",
     "webpack": "^1.13.2",
+    "webpack-dashboard": "^0.1.8",
     "webpack-dev-server": "^1.15.0"
   },
   "dependencies": {
