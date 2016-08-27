@@ -1,6 +1,7 @@
 ## TODO
 - Split dev / prod config
 - Packaging scripts
+- vscode chrome debugger
 
 ## DONE
 - HMR inside electron
