@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { render } from 'react-dom'
+import { Store } from '@types/redux'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import todoApp from './reducers/main'
@@ -11,7 +12,13 @@ declare var window: { devToolsExtension: any }
 // RENDER
 
 const rootEl = document.getElementById('root')
-let store = createStore(todoApp, window.devToolsExtension && window.devToolsExtension())
+
+let store: Store<any>
+if (__DEV__) {
+  store = createStore(todoApp, window.devToolsExtension && window.devToolsExtension())
+} else {
+  store = createStore(todoApp)
+}
 
 render(
   <Provider store={store}>

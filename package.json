@@ -3,11 +3,12 @@
   "version": "0.0.1",
   "main": "main.js",
   "scripts": {
-    "build": "webpack",
     "server": "webpack-dashboard -- node server.js",
-    "dev": "ENV=development electron ."
+    "dev": "NODE_ENV=development electron .",
+    "build-prod": "NODE_ENV=production webpack -p --config webpack.config.prod.js"
   },
   "devDependencies": {
+    "@types/node": "^6.0.38",
     "@types/react": "^0.14.33",
     "@types/react-dom": "^0.14.16",
     "@types/react-redux": "^4.4.31",
@@ -18,6 +19,7 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
     "electron-devtools-installer": "^2.0.1",
+    "electron-prebuilt": "^1.3.4",
     "html-webpack-plugin": "^2.22.0",
     "json-loader": "^0.5.4",
     "react-hot-loader": "^3.0.0-beta.2",
@@ -30,7 +32,6 @@
     "webpack-notifier": "^1.4.1"
   },
   "dependencies": {
-    "electron-prebuilt": "^1.3.3",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "react-redux": "^4.4.5",
