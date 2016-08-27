@@ -4,7 +4,8 @@
   "main": "main.js",
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dashboard -- node server.js"
+    "server": "webpack-dashboard -- node server.js",
+    "dev": "ENV=development electron ."
   },
   "devDependencies": {
     "@types/react": "^0.14.33",
