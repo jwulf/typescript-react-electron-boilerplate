@@ -7,9 +7,10 @@ import App from './components/App'
 
 const { AppContainer } = require('react-hot-loader')
 declare var module: { hot: any }
+declare var window: { devToolsExtension: any }
 const rootEl = document.getElementById('root')
 
-let store = createStore(todoApp)
+let store = createStore(todoApp, window.devToolsExtension && window.devToolsExtension())
 
 render(
   <Provider store={store}>
