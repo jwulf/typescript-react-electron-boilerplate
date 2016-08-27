@@ -11,6 +11,10 @@ module.exports = {
     'webpack/hot/only-dev-server',
     'index.tsx'
   ],
+  target: 'electron-renderer',
+  externals: {
+        "7zip": "7zip"
+  },
   output: {
     filename: 'bundle.js',
     path: path.resolve('build')
@@ -21,15 +25,16 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.tsx?$/, loaders: ['babel', 'ts-loader'] }
+      { test: /\.tsx?$/, loaders: ['babel', 'ts-loader'] },
+      { test: /\.json$/, loader: "json-loader" },
     ]
   },
   plugins: [
     new DashboardPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      title: "Typescript Boilerplate",
-      template: path.resolve(__dirname, "src", "index.ejs")
+      title: 'Typescript Boilerplate',
+      template: path.resolve(__dirname, 'src', 'index.ejs')
     })
   ]
 };
