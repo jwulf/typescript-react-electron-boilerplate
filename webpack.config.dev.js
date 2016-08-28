@@ -26,7 +26,7 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.tsx?$/, loaders: ['babel', 'ts-loader'] },
+      { test: /\.tsx?$/, loaders: ['babel', 'ts-loader'], include: [path.resolve(__dirname, 'src')] },
       { test: /\.json$/, loader: "json-loader" },
     ]
   },
@@ -39,8 +39,8 @@ module.exports = {
       template: path.resolve(__dirname, 'src', 'index.ejs')
     }),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development'),
-      '__DEV__': JSON.stringify('true')
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
+      __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true')),
     })
   ]
 };

@@ -2,13 +2,15 @@ var webpack = require('webpack');
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+console.log(path.resolve(__dirname, 'src'))
+
 module.exports = {
   entry: [
     'index.tsx'
   ],
   target: 'electron-renderer',
   externals: {
-        "7zip": "7zip"
+        '7zip': '7zip'
   },
   output: {
     filename: 'bundle.js',
@@ -20,8 +22,8 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.tsx?$/, loaders: ['babel', 'ts-loader'] },
-      { test: /\.json$/, loader: "json-loader" },
+      { test: /\.tsx?$/, loaders: ['babel', 'ts-loader'], include: [path.resolve(__dirname, 'src')] },
+      { test: /\.json$/, loader: "json-loader", include: [path.resolve(__dirname, 'src')] },
     ]
   },
   plugins: [
@@ -30,7 +32,8 @@ module.exports = {
       template: path.resolve(__dirname, 'src', 'index.ejs')
     }),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production'),
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production'),
+      __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'false')),
     })
   ]
 };

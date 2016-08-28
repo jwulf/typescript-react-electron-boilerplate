@@ -3,9 +3,13 @@
   "version": "0.0.1",
   "main": "main.js",
   "scripts": {
-    "server": "webpack-dashboard -- node server.js",
+    "server": "rimraf package && node server.js",
     "dev": "NODE_ENV=development electron .",
-    "build-prod": "NODE_ENV=production webpack -p --config webpack.config.prod.js"
+    "prepackage": "rimraf package && NODE_ENV=production webpack -p --config webpack.config.prod.js",
+    "build-win": "npm run prepackage && electron-packager . --out=package/ --prune --overwrite --platform=win32 --arch=x64",
+    "build-mac": "npm run prepackage && electron-packager . --out=package/ --prune --overwrite --platform=darwin --arch=x64",
+    "build-linux": "npm run prepackage && electron-packager . --out=package/ --prune --overwrite --platform=linux --arch=x64",
+    "build-all": "npm run prepackage && electron-packager . --out=package/ --prune --overwrite --platform=win32,darwin,linux --arch=x64"
   },
   "devDependencies": {
     "@types/node": "^6.0.38",
@@ -19,15 +23,16 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
     "electron-devtools-installer": "^2.0.1",
+    "electron-packager": "^7.7.0",
     "electron-prebuilt": "^1.3.4",
     "html-webpack-plugin": "^2.22.0",
     "json-loader": "^0.5.4",
     "react-hot-loader": "^3.0.0-beta.2",
+    "rimraf": "^2.5.4",
     "ts-loader": "^0.8.2",
     "tslint": "^3.14.0",
     "typescript": "^2.1.0-dev.20160826",
     "webpack": "^1.13.2",
-    "webpack-dashboard": "^0.1.8",
     "webpack-dev-server": "^1.15.0",
     "webpack-notifier": "^1.4.1"
   },

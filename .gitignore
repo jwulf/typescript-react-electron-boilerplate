@@ -1,6 +1,7 @@
 # Build artifacts
 build/
 ts-build/
+package/
 
 # VSCode database files
 *.VC.db*

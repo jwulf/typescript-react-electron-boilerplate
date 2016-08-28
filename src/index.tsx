@@ -17,6 +17,7 @@ let store: Store<any>
 if (__DEV__) {
   store = createStore(todoApp, window.devToolsExtension && window.devToolsExtension())
 } else {
+  console.log('PROD')
   store = createStore(todoApp)
 }
 
