@@ -4,8 +4,8 @@
   "main": "main.js",
   "scripts": {
     "server": "rimraf package && node server.js",
-    "dev": "NODE_ENV=development electron .",
-    "prepackage": "rimraf package && NODE_ENV=production webpack -p --config webpack.config.prod.js",
+    "dev": "cross-env NODE_ENV=development electron .",
+    "prepackage": "rimraf package && cross-env NODE_ENV=production webpack -p --config webpack.config.prod.js",
     "build-win": "npm run prepackage && electron-packager . --out=package/ --prune --overwrite --platform=win32 --arch=x64",
     "build-mac": "npm run prepackage && electron-packager . --out=package/ --prune --overwrite --platform=darwin --arch=x64",
     "build-linux": "npm run prepackage && electron-packager . --out=package/ --prune --overwrite --platform=linux --arch=x64",
@@ -22,6 +22,7 @@
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
+    "cross-env": "^2.0.0",
     "electron": "^1.3.4",
     "electron-devtools-installer": "^2.0.1",
     "electron-packager": "^7.7.0",
