@@ -1,5 +1,7 @@
 ## TODO
 - Travis / Appveyor
+- Unit testing
+- E2E testing
 - vscode chrome debugger
 
 ## DONE
