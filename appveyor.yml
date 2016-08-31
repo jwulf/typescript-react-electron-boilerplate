@@ -20,8 +20,6 @@ test_script:
   - node --version
   - npm --version
   - npm run build-all
-after_build:
-  - 7z a build.zip package
 artifacts:
-  - path: build.zip
+  - path: package
     name: builds
