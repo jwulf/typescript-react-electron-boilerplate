@@ -1,4 +1,4 @@
-import * as React from 'react'
+import * as React from 'react' // tslint:disable-line:no-unused-variable
 import { render } from 'react-dom'
 import { Store } from '@types/redux'
 import { createStore } from 'redux'
@@ -34,7 +34,7 @@ if (module.hot) {
   const { AppContainer } = require('react-hot-loader')
 
   module.hot.accept('./components/App', () => {
-    const NextApp = require('./components/App').default
+    const NextApp = require('./components/App').default // tslint:disable-line:no-unused-variable
 
     render(
       <AppContainer>

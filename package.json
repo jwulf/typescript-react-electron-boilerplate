@@ -11,7 +11,8 @@
     "build-linux": "npm run prepackage && electron-packager . --out=package/ --prune --overwrite --platform=linux --arch=x64",
     "build-unix": "npm run prepackage && electron-packager . --out=package/ --prune --overwrite --platform=linux,darwin --arch=x64",
     "build-all": "npm run prepackage && electron-packager . --out=package/ --prune --overwrite --platform=win32,darwin,linux --arch=x64",
-    "archive-builds": "tar -zcvf builds.tar.gz package"
+    "archive-builds": "tar -zcvf builds.tar.gz package",
+    "lint": "tslint 'src/**/*.ts?(x)'"
   },
   "devDependencies": {
     "@types/node": "^6.0.38",

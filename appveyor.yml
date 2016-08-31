@@ -19,6 +19,7 @@ clone_depth: 1
 test_script:
   - node --version
   - npm --version
+  - npm run lint
   - npm run build-win
 artifacts:
   - path: package
