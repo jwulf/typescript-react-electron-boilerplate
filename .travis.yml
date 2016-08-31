@@ -14,6 +14,8 @@ cache:
 
 addons:
   artifacts: true
+    paths:
+      - $(git ls-files -o | tr "package")
   apt:
     sources:
       - ubuntu-toolchain-r-test
