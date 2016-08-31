@@ -2,8 +2,6 @@ sudo: false
 
 language: node_js
 
-osx_image: xcode8
-
 node_js:
   - 6
 
@@ -24,7 +22,6 @@ addons:
       - graphicsmagick
       - xz-utils
       - xorriso
-      - wine
 
 install:
   - export CXX="g++-4.8"
@@ -37,4 +34,4 @@ before_script:
   - sleep 3
 
 script:
-  - npm run build-all
+  - npm run build-unix

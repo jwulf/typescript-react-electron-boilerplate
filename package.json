@@ -9,6 +9,7 @@
     "build-win": "npm run prepackage && electron-packager . --out=package/ --prune --overwrite --platform=win32 --arch=x64",
     "build-mac": "npm run prepackage && electron-packager . --out=package/ --prune --overwrite --platform=darwin --arch=x64",
     "build-linux": "npm run prepackage && electron-packager . --out=package/ --prune --overwrite --platform=linux --arch=x64",
+    "build-unix": "npm run prepackage && electron-packager . --out=package/ --prune --overwrite --platform=linux,darwin --arch=x64",
     "build-all": "npm run prepackage && electron-packager . --out=package/ --prune --overwrite --platform=win32,darwin,linux --arch=x64"
   },
   "devDependencies": {
