@@ -1,4 +1,4 @@
-import * as React from 'react'
+import * as React from 'react' // tslint:disable-line:no-unused-variable
 import { render } from 'react-dom'
 import { Store } from '@types/redux'
 import { createStore } from 'redux'
