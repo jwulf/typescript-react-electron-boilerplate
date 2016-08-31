@@ -39,4 +39,4 @@ before_script:
 script: |
   npm run lint &&
   npm run build-unix &&
-  npm run archive-builds &&
+  npm run archive-builds
