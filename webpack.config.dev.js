@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var WebpackNotifierPlugin = require('webpack-notifier');
+var failPlugin = require('webpack-fail-plugin');
 
 module.exports = {
   devtool: 'eval',
@@ -30,6 +31,7 @@ module.exports = {
     ]
   },
   plugins: [
+    failPlugin,
     new WebpackNotifierPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({

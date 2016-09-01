@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var failPlugin = require('webpack-fail-plugin');
 
 console.log(path.resolve(__dirname, 'src'))
 
@@ -27,6 +28,7 @@ module.exports = {
     ]
   },
   plugins: [
+    failPlugin,
     new HtmlWebpackPlugin({
       title: 'Typescript Boilerplate',
       template: path.resolve(__dirname, 'src', 'index.ejs')

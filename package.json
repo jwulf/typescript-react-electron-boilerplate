@@ -41,6 +41,7 @@
     "typescript": "^2.1.0-dev.20160826",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.0",
+    "webpack-fail-plugin": "^1.0.5",
     "webpack-notifier": "^1.4.1"
   },
   "dependencies": {
