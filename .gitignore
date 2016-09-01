@@ -8,3 +8,6 @@ package/
 
 # Project deps
 node_modules/
+
+# npm files
+npm-debug.log
