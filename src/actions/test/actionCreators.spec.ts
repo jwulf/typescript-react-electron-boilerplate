@@ -1,3 +1,4 @@
+import * as mocha from 'mocha' // tslint:disable-line:no-unused-variable
 import expect from 'expect'
 import * as actions from '../actionCreators'
 import { IVisibilityFilter } from '../../types/state'
