@@ -1,7 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var DashboardPlugin = require('webpack-dashboard/plugin');
 var WebpackNotifierPlugin = require('webpack-notifier');
 
 module.exports = {
@@ -31,7 +30,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new DashboardPlugin(),
     new WebpackNotifierPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
