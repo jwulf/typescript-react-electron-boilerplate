@@ -4,6 +4,7 @@ let win
 
 const installExtenstions = () => {
   const installer = require('electron-devtools-installer');
+  require('electron-debug')({showDevTools: true});
 
   const extensions = [
     'REACT_DEVELOPER_TOOLS',
