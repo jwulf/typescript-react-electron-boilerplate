@@ -1,10 +1,8 @@
 ## TODO
-- Update to typescript 2 RC
 - Unit testing (React)
 - Base webpack config
 - E2E testing
 - vscode chrome debugger
-- readme
 - sign apps
 - npm command to watch tests
 - electron dev tools
@@ -14,6 +12,9 @@
 - Travis / Appveyor artifacts to gh releases
 
 ## DONE
+- build status in readme
+- readme
+- Update to typescript 2 RC
 - Add mocha and node as global types
 - Set up greenkeeper.io
 - Unit testing (JS only)
