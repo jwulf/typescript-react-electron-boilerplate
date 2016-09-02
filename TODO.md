@@ -6,6 +6,7 @@
 - sign apps
 - npm command to watch tests
 - electron dev tools
+- ts-loader complains about unused imports for mocha, but tsc does not?
 
 ## DONE
 - Travis / Appveyor
