@@ -8,13 +8,13 @@
 - sign apps
 - npm command to watch tests
 - electron dev tools
-- ts-loader complains about unused imports for mocha, but tsc does not?
 - Switch to electron builder
 - auto updating
 - app icons
 - Travis / Appveyor artifacts to gh releases
 
 ## DONE
+- Add mocha and node as global types
 - Set up greenkeeper.io
 - Unit testing (JS only)
 - Travis / Appveyor

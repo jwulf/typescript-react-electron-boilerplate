@@ -17,6 +17,7 @@
   "devDependencies": {
     "@types/expect": "^1.13.29",
     "@types/mocha": "^2.2.31",
+    "@types/node": "^6.0.38",
     "@types/react": "^0.14.33",
     "@types/react-dom": "^0.14.16",
     "@types/react-redux": "^4.4.31",
