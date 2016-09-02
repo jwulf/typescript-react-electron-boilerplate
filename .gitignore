@@ -3,8 +3,9 @@ build/
 ts-build/
 package/
 
-# VSCode database files
+# VS Code files
 *.VC.db*
+.vscode/cSpell.json
 
 # Project deps
 node_modules/
