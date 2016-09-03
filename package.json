@@ -1,12 +1,18 @@
 {
   "name": "typescript-react-webpack",
-  "version": "0.0.1",
+  "version": "0.0.0",
+  "description": "typescript / react / redux / electron boilerplate",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xwvvvvwx/typescript-react-electron-boilerplate"
+  },
+  "license": "Unlicense",
   "main": "main.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development electron .",
     "server": "node server.js",
     "lint": "tslint \"src/**/*.ts?(x)\"",
-    "test": "tsc && mocha --compilers js:babel-register --recursive ts-build",
+    "test": "tsc && mocha --opts mocha.opts",
     "prepackage": "cross-env NODE_ENV=production webpack -p --config webpack.config.prod.js",
     "build-win": "npm run prepackage && electron-packager . --out=package/ --prune --overwrite --platform=win32 --arch=x64",
     "build-mac": "npm run prepackage && electron-packager . --out=package/ --prune --overwrite --platform=darwin --arch=x64",
@@ -15,6 +21,7 @@
     "archive-builds": "tar -zcf builds.tar.gz package"
   },
   "devDependencies": {
+    "@types/enzyme": "^2.4.32",
     "@types/expect": "^1.13.29",
     "@types/mocha": "^2.2.31",
     "@types/node": "^6.0.38",
@@ -38,6 +45,7 @@
     "html-webpack-plugin": "^2.22.0",
     "json-loader": "^0.5.4",
     "mocha": "^3.0.2",
+    "react-addons-test-utils": "^15.3.1",
     "react-hot-loader": "^3.0.0-beta.2",
     "ts-loader": "^0.8.2",
     "tslint": "^3.14.0",

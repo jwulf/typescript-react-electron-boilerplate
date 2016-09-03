@@ -1,0 +1,5 @@
+--watch-extensions jsx,js
+--compilers js:babel-register
+--recursive
+ts-build/**/*.spec.jsx
+ts-build/**/*.spec.js

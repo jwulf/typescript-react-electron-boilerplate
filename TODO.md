@@ -1,5 +1,4 @@
 ## TODO
-- Unit testing (React)
 - Base webpack config
 - E2E testing
 - vscode chrome debugger
@@ -12,6 +11,7 @@
 - Travis / Appveyor artifacts to gh releases
 
 ## DONE
+- Unit testing (React)
 - build status in readme
 - readme
 - Update to typescript 2 RC

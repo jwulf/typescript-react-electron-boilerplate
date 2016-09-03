@@ -3,7 +3,7 @@
 Boilerplate project for building an electron app using React, Redux, Electron and Typescript.
 
 [![Build status](https://ci.appveyor.com/api/projects/status/o5rekt4awy1k8xj5?svg=true)](https://ci.appveyor.com/project/xwvvvvwx/typescript-boilerplate)
-[![Build status](https://travis-ci.org/xwvvvvwx/typescript-react-electron-boilerplate.svg?branch=master)](https://travis-ci.org/xwvvvvwx/typescript-boilerplate)
+[![Build status](https://travis-ci.org/xwvvvvwx/typescript-react-electron-boilerplate.svg?branch=master)](https://travis-ci.org/xwvvvvwx/typescript-react-electron-boilerplate)
 
 ## Features
 
@@ -73,7 +73,9 @@ $ npm run test
 - any file under `src` of the form `*.spec.ts` will be executed
 - Tests are run using [mocha](https://mochajs.org/).
 - Assertions can be written using [expect](https://github.com/mjackson/expect).
-- See [actionCreators.spec.js](https://github.com/xwvvvvwx/typescript-boilerplate/blob/master/src/actions/test/actionCreators.spec.ts) for examples.
+- React components can be tested using [enzyme](http://airbnb.io/enzyme/index.html).
+- See [actionCreators.spec.ts](https://github.com/xwvvvvwx/typescript-boilerplate/blob/master/src/actions/test/actionCreators.spec.ts) for examples of pure TS tests.
+- See [Todo.spec.tsx](https://github.com/xwvvvvwx/typescript-react-electron-boilerplate/tree/master/src/components/test/Todo.spec.tsx) for examples of react component testing.
 
 ## Packaging
 
