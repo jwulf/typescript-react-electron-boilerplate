@@ -28,7 +28,6 @@
     "@types/react": "^0.14.33",
     "@types/react-dom": "^0.14.16",
     "@types/react-redux": "^4.4.31",
-    "@types/redux": "^3.5.28",
     "babel-core": "^6.14.0",
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.14.0",
