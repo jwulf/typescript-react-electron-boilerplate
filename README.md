@@ -5,6 +5,16 @@ Boilerplate project for building an electron app using React, Redux, Electron an
 [![Build status](https://ci.appveyor.com/api/projects/status/o5rekt4awy1k8xj5?svg=true)](https://ci.appveyor.com/project/xwvvvvwx/typescript-boilerplate)
 [![Build status](https://travis-ci.org/xwvvvvwx/typescript-react-electron-boilerplate.svg?branch=master)](https://travis-ci.org/xwvvvvwx/typescript-react-electron-boilerplate)
 
+## Contents
+* [Features](#features)
+* [Install](#install)
+* [Run](#run)
+* [Code Organization](#code-organization)
+* [Adding Type Definitions](#adding-type-definitions)
+* [Testing](#testing)
+* [Packaging](#packaging)
+* [Linting](#linting)
+
 ## Features
 
 - Hot module reloading
@@ -27,15 +37,6 @@ $ git clone https://github.com/xwvvvvwx/typescript-react-electron-boilerplate.gi
 ```
 $ cd your-project-name && npm install
 ```
-
-## Contents
-
-* [Run](#Run)
-* [Code Organization](#CodeOrganization)
-* [Adding Type Definitions](#AddingTypeDefinitions)
-* [Testing](#Testing)
-* [Packaging](#Packaging)
-* [Linting](#Linting)
 
 ## Run
 
