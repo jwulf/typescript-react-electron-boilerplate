@@ -28,6 +28,15 @@ $ git clone https://github.com/xwvvvvwx/typescript-react-electron-boilerplate.gi
 $ cd your-project-name && npm install
 ```
 
+## Contents
+
+* [Run](#Run)
+* [Code Organization](#CodeOrganization)
+* [Adding Type Definitions](#AddingTypeDefinitions)
+* [Testing](#Testing)
+* [Packaging](#Packaging)
+* [Linting](#Linting)
+
 ## Run
 
 Run these two commands simultaneously in separate console tabs.
