@@ -23,7 +23,7 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.tsx?$/, loaders: ['babel', 'ts-loader'], include: [path.resolve(__dirname, 'src')] },
+      { test: /\.tsx?$/, loaders: ['ts-loader'], include: [path.resolve(__dirname, 'src')] },
       { test: /\.json$/, loader: "json-loader", include: [path.resolve(__dirname, 'src')] },
     ]
   },

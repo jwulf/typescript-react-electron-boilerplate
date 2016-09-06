@@ -1,5 +1,5 @@
-import React from 'react' // tslint:disable-line:no-unused-variable
-import expect from 'expect'
+import * as React from 'react' // tslint:disable-line:no-unused-variable
+import { expect } from 'chai'
 import { shallow } from 'enzyme'
 import Todo from '../Todo'
 
@@ -25,26 +25,26 @@ describe('components', () => {
   describe('Todo', () => {
     it('should display text prop', () => {
       const { props, enzymeWrapper } = setup()
-      expect(enzymeWrapper.text()).toBe(props.text)
+      expect(enzymeWrapper.text()).to.equal(props.text)
     })
 
     it('should have a line through when completed', () => {
       const completed = true
       const { props, enzymeWrapper } = setup(completed)
-      expect(enzymeWrapper.html()).toInclude('line-through')
+      expect(enzymeWrapper.html()).to.contain('line-through')
     })
 
     it('should not have a line through when not completed', () => {
       const completed = false
       const { props, enzymeWrapper } = setup(completed)
-      expect(enzymeWrapper.html()).toExclude('line-through')
+      expect(enzymeWrapper.html()).to.not.contain('line-through')
     })
 
     it('should call onClick prop when clicked', () => {
       calledCount = 0
       const { props, enzymeWrapper } = setup()
       enzymeWrapper.simulate('click')
-      expect(calledCount).toBe(1)
+      expect(calledCount).to.equal(1)
     })
 
   })

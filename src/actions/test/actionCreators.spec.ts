@@ -1,6 +1,7 @@
-import expect from 'expect'
-import * as actions from '../actionCreators'
+import { IAction } from '../../types/actions'
 import { IVisibilityFilter } from '../../types/state'
+import { expect } from 'chai'
+import * as actions from '../actionCreators'
 
 describe('Action Creators', () => {
 
@@ -9,7 +10,7 @@ describe('Action Creators', () => {
       const text = 'Finish docs'
       const id = 0
       const actual = actions.addTodo({id, text})
-      const expected = {
+      const expected: IAction<{ id: number, text: string }> = {
         type: 'ADD_TODO',
         payload: {
             id,
@@ -17,7 +18,7 @@ describe('Action Creators', () => {
         }
       }
 
-      expect(actual).toEqual(expected)
+      expect(actual).to.deep.equal(expected)
     })
   })
 
@@ -25,14 +26,14 @@ describe('Action Creators', () => {
     it('Should create an action to toggle a todo', () => {
       const index = 5
       const actual = actions.toggleTodo({index})
-      const expected  = {
+      const expected: IAction<{ index: number }>  = {
         type: 'TOGGLE_TODO',
         payload: {
           index
         }
       }
 
-      expect(actual).toEqual(expected)
+      expect(actual).to.deep.equal(expected)
     })
   })
 
@@ -40,14 +41,14 @@ describe('Action Creators', () => {
     it('Should create an action to change the visibility filter', () => {
       const filter: IVisibilityFilter = 'SHOW_ALL'
       const actual = actions.setVisibilityFilter({filter})
-      const expected = {
+      const expected: IAction<{ filter: IVisibilityFilter }> = {
         type: 'SET_VISIBILITY_FILTER',
         payload: {
           filter
         }
       }
 
-      expect(actual).toEqual(expected)
+      expect(actual).to.deep.equal(expected)
     })
   })
 

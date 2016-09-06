@@ -1,10 +1,7 @@
 ## TODO
+- No webpack for prod builds
 - E2E testing
 - vscode chrome debugger
-- Base webpack config
-- Try out awesome typescript loader and see if build times improve
-- Tests take too long to execute
-- npm command to watch tests
 - Switch to electron builder
 - app icons
 - sign apps
@@ -12,6 +9,9 @@
 - auto updating
 
 ## DONE
+- npm command to watch tests
+- Tests take too long to execute
+- Get rid of babel
 - electron dev tools
 - Unit testing (React)
 - build status in readme

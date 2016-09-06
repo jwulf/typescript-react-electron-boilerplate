@@ -48,8 +48,8 @@ $ npm start
 
 **Notes**
 - Uses [webpack](https://webpack.github.io/)
-- Typescript code is processed with `ts-loader` into `babel` (to allow HMR)
-- Uses [react-hot-loader](https://github.com/gaearon/react-hot-loader) version 3
+- Hot Module Replacement with vanilla HMR (see [Hot Reloading In React](https://medium.com/@dan_abramov/hot-reloading-in-react-1140438583bf#.389tj16hj) for details on trade offs)
+- Typescript code is processed with `ts-loader`
 - Redux / React devtools are automatically installed with [electron-devtools-installer](https://github.com/GPMDP/electron-devtools-installer)
 - Electron devtools (devtron) automatically installed with [electron-debug](https://github.com/sindresorhus/electron-debug)
 - Notifications of failed builds using [webpack-notifier](https://www.npmjs.com/package/webpack-notifier)
