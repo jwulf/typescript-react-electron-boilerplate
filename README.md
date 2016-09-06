@@ -82,7 +82,7 @@ $ npm run test
 **Writing Tests**
 - any file under `src` of the form `*.spec.ts` will be executed
 - Tests are run using [mocha](https://mochajs.org/).
-- Assertions can be written using [expect](https://github.com/mjackson/expect).
+- Assertions can be written using [chai](http://chaijs.com/).
 - React components can be tested using [enzyme](http://airbnb.io/enzyme/index.html).
 - See [actionCreators.spec.ts](https://github.com/xwvvvvwx/typescript-boilerplate/blob/master/src/actions/test/actionCreators.spec.ts) for examples of pure TS tests.
 - See [Todo.spec.tsx](https://github.com/xwvvvvwx/typescript-react-electron-boilerplate/tree/master/src/components/test/Todo.spec.tsx) for examples of react component testing.
