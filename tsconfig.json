@@ -11,8 +11,10 @@
     "jsx": "react",
     "types": ["mocha", "node"]
   },
-  "exclude": [
-    "node_modules",
-    "package"
+  "include": [
+    "src"
+  ],
+  "files": [
+    "type-declarations/globals.d.ts"
   ]
 }
