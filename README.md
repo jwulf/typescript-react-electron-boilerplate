@@ -26,13 +26,13 @@ Boilerplate project for building an electron app using React, Redux, Electron an
 
 ## Install
 
-1. Clone the repo
+- Clone the repo
 
 ```
 $ git clone https://github.com/xwvvvvwx/typescript-react-electron-boilerplate.git your-project-name
 ```
 
-2. Install dependencies
+- Install dependencies
 
 ```
 $ cd your-project-name && npm install

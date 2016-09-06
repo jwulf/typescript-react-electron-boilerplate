@@ -1,16 +1,18 @@
 ## TODO
-- Base webpack config
 - E2E testing
 - vscode chrome debugger
-- sign apps
+- Base webpack config
+- Try out awesome typescript loader and see if build times improve
+- Tests take too long to execute
 - npm command to watch tests
-- electron dev tools
 - Switch to electron builder
-- auto updating
 - app icons
+- sign apps
 - Travis / Appveyor artifacts to gh releases
+- auto updating
 
 ## DONE
+- electron dev tools
 - Unit testing (React)
 - build status in readme
 - readme
