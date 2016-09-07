@@ -1,14 +1,10 @@
 # Build artifacts
 build/
-ts-build/
-package/
 
 # VS Code files
 *.VC.db*
 .vscode/cSpell.json
 
-# Project deps
-node_modules/
-
 # npm files
+node_modules/
 npm-debug.log

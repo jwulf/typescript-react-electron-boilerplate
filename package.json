@@ -15,11 +15,11 @@
     "test": "mocha --opts mocha.opts",
     "test:watch": "npm run test -- --watch",
     "prepackage": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
-    "build-win": "npm run prepackage && electron-packager . --out=package/ --prune --overwrite --platform=win32 --arch=x64",
-    "build-mac": "npm run prepackage && electron-packager . --out=package/ --prune --overwrite --platform=darwin --arch=x64",
-    "build-linux": "npm run prepackage && electron-packager . --out=package/ --prune --overwrite --platform=linux --arch=x64",
-    "build-all": "npm run prepackage && electron-packager . --out=package/ --prune --overwrite --platform=win32,darwin,linux --arch=x64",
-    "archive-builds": "tar -zcf builds.tar.gz package"
+    "build-win": "npm run prepackage && electron-packager . --out=build/package/ --prune --overwrite --platform=win32 --arch=x64",
+    "build-mac": "npm run prepackage && electron-packager . --out=build/package/ --prune --overwrite --platform=darwin --arch=x64",
+    "build-linux": "npm run prepackage && electron-packager . --out=build/package/ --prune --overwrite --platform=linux --arch=x64",
+    "build-all": "npm run prepackage && electron-packager . --out=build/package/ --prune --overwrite --platform=win32,darwin,linux --arch=x64",
+    "archive-builds": "tar -zcf builds.tar.gz build/package"
   },
   "devDependencies": {
     "@types/chai": "^3.4.32",

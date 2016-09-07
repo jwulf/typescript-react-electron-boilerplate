@@ -7,7 +7,7 @@
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
     "sourceMap": true,
-    "outDir": "ts-build",
+    "outDir": "build/tsc",
     "jsx": "react",
     "types": ["mocha", "node"]
   },

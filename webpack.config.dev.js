@@ -16,7 +16,7 @@ module.exports = {
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve('build')
+    path: path.resolve('build/webpack')
   },
   resolve: {
     extensions: ['', '.ts', '.tsx', '.js', '.jsx'],
