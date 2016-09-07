@@ -77,11 +77,12 @@ $ npm i -D @types/<PACKAGE_NAME>
 **Run tests**:<br>
 ```
 $ npm run test
+$ npm run test:watch
 ```
 
 **Writing Tests**
 - any file under `src` of the form `*.spec.ts` will be executed
-- Tests are run using [mocha](https://mochajs.org/).
+- Tests are run using [mocha](https://mochajs.org/) running on [ts-node](https://github.com/TypeStrong/ts-node).
 - Assertions can be written using [chai](http://chaijs.com/).
 - React components can be tested using [enzyme](http://airbnb.io/enzyme/index.html).
 - See [actionCreators.spec.ts](https://github.com/xwvvvvwx/typescript-boilerplate/blob/master/src/actions/test/actionCreators.spec.ts) for examples of pure TS tests.
