@@ -1,6 +1,7 @@
 ## TODO
-- No webpack for prod builds
 - E2E testing
+- mocha -> ava (concurrent test execution)
+- No webpack for prod builds
 - vscode chrome debugger
 - Switch to electron builder
 - app icons
