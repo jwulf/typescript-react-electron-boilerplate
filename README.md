@@ -85,7 +85,7 @@ $ npm start
 /* component.tsx */
 const styles = require('./styles.css')
 
-const Component: React.StatelessComponent<LinkProps>  = ({ active, children, onClick }) => (
+const Component: React.StatelessComponent<{}>  = () => (
   <p className={styles.className}>
     Hello, world!
   </p>
