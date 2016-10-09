@@ -1,7 +1,8 @@
-// Place your settings in this file to overwrite default and user settings.
 {
+    "css.validate": false,
+    "stylelint.enable": true,
     "typescript.tsdk": "node_modules/typescript/lib",
-        "files.exclude": {
+    "files.exclude": {
         "build/": true,
         "**/._*": true,
         "**/*.VC.db*": true,

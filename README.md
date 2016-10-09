@@ -174,4 +174,5 @@ $ npm run lint
 ```
 
 **Notes**
-- Uses [tslint](http://palantir.github.io/tslint/)
+- Uses [tslint](http://palantir.github.io/tslint/) for typescript
+- Uses [stylelint](https://github.com/stylelint/stylelint) for css
