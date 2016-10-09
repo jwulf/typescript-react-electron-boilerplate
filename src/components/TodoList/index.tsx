@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { ITodo } from '../types/state'
-import Todo from './Todo'
+import { ITodo } from '../../types/state'
+import Todo from '../Todo'
 
 interface TodoListProps {
     todos: ITodo[]

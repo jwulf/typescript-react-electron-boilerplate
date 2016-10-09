@@ -62,10 +62,74 @@ $ npm start
 - This loads `src/components/App.tsx` (root component)
 - Store is built from `src/reducers/main.ts`
 
+## CSS
+
+- CSS is processed with [postcss](https://github.com/postcss/postcss)
+- The [cssnext](http://cssnext.io/) plugin is installed
+- Global variables are defined in `src/global-css-vars`
+- Global variables are passed to css files using [postcss-simple-vars](https://github.com/postcss/postcss-simple-vars)
+
+**Using CSS in a React Component**
+
+- Typescript gets upset if you try and import css files, so you can bypass the typechecker by using `require` instead
+
+```css
+/* style.css */
+.className {
+    color: red;
+}
+```
+
+```typescript
+/* component.tsx */
+const styles = require('./styles.css')
+
+const Component: React.StatelessComponent<LinkProps>  = ({ active, children, onClick }) => (
+  <p className={styles.className}>
+    Hello, world!
+  </p>
+)
+```
+
+**Using a global var in a css file**
+
+- variables are prefixed with `$`
+```css
+.className {
+    font-family: $body-font
+}
+```
+
+**Installing new postcss plugins**
+
+1. install the plugin with npm
+2. Require the plugin in both webpack configs
+3. Add the plugin to the list of postcss plugins in the webpack config
+
+```javascript
+var plugin = require('post-css-plugin-name')
+
+module.exports = {
+  /*
+  webpack config....
+  */
+  postcss: function () {
+    return {
+      plugins: [
+        // add new plugins here
+        plugin()
+      ]
+    };
+  }
+}
+```
+
+
 ## Adding type definitions
 
 - Uses typescript 2
-- Type definitions are installed with npm (see [The Future of Type Definition Files](https://blogs.msdn.microsoft.com/typescript/2016/06/15/the-future-of-declaration-files/))
+- Type definitions provided by a project are discovered automatically (e.g. `redux`)
+- Community type definitions are installed with npm (see [The Future of Type Definition Files](https://blogs.msdn.microsoft.com/typescript/2016/06/15/the-future-of-declaration-files/))
 
 To add a new type definition file run:
 ```

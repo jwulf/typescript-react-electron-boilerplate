@@ -1,8 +1,7 @@
-import { IVisibilityFilter, IState } from '../types/state'
-
+import { IVisibilityFilter, IState } from '../../types/state'
 import { connect } from 'react-redux'
-import { setVisibilityFilter } from '../actions/actionCreators'
-import Link from '../components/Link'
+import { setVisibilityFilter } from '../../actions/actionCreators'
+import Link from '../../components/Link'
 
 const mapStateToProps = (state: IState, ownProps: {filter: IVisibilityFilter}): {active: boolean} => {
   return {

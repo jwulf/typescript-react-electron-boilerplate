@@ -1,7 +1,7 @@
 import * as React from 'react' // tslint:disable-line:no-unused-variable
 import { expect } from 'chai'
 import { shallow } from 'enzyme'
-import Todo from '../Todo'
+import Todo from './index'
 
 
 let calledCount = 0

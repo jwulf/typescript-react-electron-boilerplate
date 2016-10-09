@@ -1,7 +1,7 @@
-import { IVisibilityFilter, ITodo, IState } from '../types/state'
+import { IVisibilityFilter, ITodo, IState } from '../../types/state'
 import { connect } from 'react-redux'
-import { toggleTodo } from '../actions/actionCreators'
-import TodoList from '../components/TodoList'
+import { toggleTodo } from '../../actions/actionCreators'
+import TodoList from '../../components/TodoList'
 
 const getVisibleTodos = (todos: ITodo[], filter: IVisibilityFilter): ITodo[] => {
   switch (filter) {

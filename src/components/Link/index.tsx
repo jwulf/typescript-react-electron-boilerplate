@@ -1,4 +1,5 @@
 import * as React from 'react'
+const styles = require('./styles.css')
 
 interface LinkProps {
     active: boolean
@@ -13,6 +14,7 @@ const Link: React.StatelessComponent<LinkProps>  = ({ active, children, onClick 
 
   return (
     <a href="#"
+       className={styles.text}
        onClick={e => {
          e.preventDefault()
          onClick()

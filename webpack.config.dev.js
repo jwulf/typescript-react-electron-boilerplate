@@ -1,8 +1,14 @@
 var webpack = require('webpack');
 var path = require('path');
+
+// webpack plugins
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var WebpackNotifierPlugin = require('webpack-notifier');
 var failPlugin = require('webpack-fail-plugin');
+
+// postcss plugins
+var cssnext = require('postcss-cssnext');
+var simpleVars = require('postcss-simple-vars')
 
 module.exports = {
   devtool: 'eval',
@@ -19,14 +25,41 @@ module.exports = {
     path: path.resolve('build/webpack')
   },
   resolve: {
-    extensions: ['', '.ts', '.tsx', '.js', '.jsx'],
+    extensions: ['', '.ts', '.tsx', '.js', '.jsx', '.css'],
     modulesDirectories: ['src', 'node_modules'],
   },
   module: {
     loaders: [
-      { test: /\.tsx?$/, loaders: ['ts-loader'], include: [path.resolve(__dirname, 'src')] },
-      { test: /\.json$/, loader: "json-loader" },
+      {
+        test: /\.tsx?$/,
+        loaders: ['ts-loader'],
+        include: [path.resolve(__dirname, 'src')]
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
+      },
+      {
+        test: /\.css$/,
+        loaders: [
+          'style?sourceMap',
+          'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+          'postcss-loader'
+        ]
+      }
     ]
+  },
+  postcss: function () {
+        return {
+          plugins: [
+            cssnext({browsers: ['last 1 Chrome versions']}),
+            simpleVars({
+              variables: function () {
+                return require('./src/css-global-vars.js');
+              }
+            })
+          ]
+        };
   },
   plugins: [
     failPlugin,

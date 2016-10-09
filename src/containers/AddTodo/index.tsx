@@ -1,7 +1,8 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
-import { IState } from '../types/state'
-import { addTodo } from '../actions/actionCreators'
+import { IState } from '../../types/state'
+import { addTodo } from '../../actions/actionCreators'
+const styles = require('./styles.css')
 
 const mapStateToProps = (state: IState): {nextTodoId: number} => {
     return {
@@ -18,7 +19,7 @@ let AddTodo: React.StatelessComponent<AddTodoProps> = ({ dispatch, nextTodoId })
   let input: any
 
   return (
-    <div>
+    <div className={styles.container}>
       <form onSubmit={e => {
         e.preventDefault()
         if (!input.value.trim()) {
@@ -30,7 +31,7 @@ let AddTodo: React.StatelessComponent<AddTodoProps> = ({ dispatch, nextTodoId })
         <input ref={node => {
           input = node
         }} />
-        <button type="submit">
+        <button type="submit" className={styles.button}>
           Add Todo
         </button>
       </form>

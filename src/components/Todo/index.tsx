@@ -1,4 +1,5 @@
 import * as React from 'react'
+const styles = require('./styles.css')
 
 interface TodoProps {
     onClick: () => void
@@ -9,6 +10,7 @@ interface TodoProps {
 const Todo: React.StatelessComponent<TodoProps>  = ({ onClick, completed, text }) => (
   <li
     onClick={onClick}
+    className={styles.todoItem}
     style={{
       textDecoration: completed ? 'line-through' : 'none'
     }}

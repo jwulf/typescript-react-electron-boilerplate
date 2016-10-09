@@ -1,0 +1,4 @@
+.todoItem {
+    font-family: $body-font;
+    color: $red;
+}
