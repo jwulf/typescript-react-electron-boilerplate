@@ -1,9 +1,9 @@
-import { IAction } from '../types/actions'
-import { IState } from '../types/state'
+import { IAction } from 'types/actions'
+import { IState } from 'types/state'
 
-import todos from './todos'
-import visibilityFilter from './visibilityFilter'
-import nextTodoId from './nextTodoId'
+import todos from 'reducers/todos'
+import visibilityFilter from 'reducers/visibilityFilter'
+import nextTodoId from 'reducers/nextTodoId'
 
 const initialState: IState = {
     visibilityFilter: 'SHOW_ALL',

@@ -1,8 +1,9 @@
 import * as React from 'react' // tslint:disable-line:no-unused-variable
-import FilterLink from '../../containers/FilterLink'
+import FilterLink from 'containers/FilterLink'
+const styles = require('./styles.css')
 
 const Footer = () => (
-  <p>
+  <p className={styles.text}>
     Show:
     {' '}
     <FilterLink filter="SHOW_ALL">

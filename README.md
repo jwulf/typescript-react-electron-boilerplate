@@ -21,21 +21,15 @@ Boilerplate project for building an electron app using React, Redux, Electron an
 - Hot module reloading
 - Packaging
 - CI integration with `travis` and `appveyor`
-- Unit testing with `mocha` / `expect`
-- React / Redux devtools
-- linting with `tslint`
+- Unit testing with `mocha` / `chai`
+- React / Redux / Electron devtools
+- linting with `tslint` and `stylelint`
 
 ## Install
 
-- Clone the repo
-
+Clone the repo and install deps:
 ```
 $ git clone https://github.com/xwvvvvwx/typescript-react-electron-boilerplate.git your-project-name
-```
-
-- Install dependencies
-
-```
 $ cd your-project-name && npm install
 ```
 
@@ -62,6 +56,7 @@ $ npm start
 - This calls `src/index.tsx` (generates store / handles HMR wrapping)
 - This loads `src/components/App.tsx` (root component)
 - Store is built from `src/reducers/main.ts`
+- Modules can be imported using absolute paths (`src` is the root)
 
 ## CSS
 
@@ -146,7 +141,7 @@ $ npm run test:watch
 ```
 
 **Writing Tests**
-- any file under `src` of the form `*.spec.ts` will be executed
+- any file under `src` of the form `*.spec.ts` or `*.spec.tsx` will be executed
 - Tests are run using [mocha](https://mochajs.org/) running on [ts-node](https://github.com/TypeStrong/ts-node).
 - Assertions can be written using [chai](http://chaijs.com/).
 - React components can be tested using [enzyme](http://airbnb.io/enzyme/index.html).

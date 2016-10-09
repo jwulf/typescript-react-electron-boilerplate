@@ -14,7 +14,7 @@
     "lint-css": "stylelint \"src/**/*.css\"",
     "lint-ts": "tslint \"src/**/*.ts?(x)\"",
     "lint": "npm run lint-css && npm run lint-ts",
-    "test": "mocha --opts mocha.opts",
+    "test": "cross-env NODE_PATH=./src mocha --opts mocha.opts",
     "test:watch": "npm run test -- --watch",
     "prepackage": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
     "build-win": "npm run prepackage && electron-packager . --out=build/package/ --prune --overwrite --platform=win32 --arch=x64",

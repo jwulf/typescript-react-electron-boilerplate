@@ -1,7 +1,7 @@
-import { IAction } from '../types/actions'
-import { ITodo } from '../types/state'
-import { isType } from '../utils/actions'
-import { addTodo, toggleTodo } from '../actions/actionCreators'
+import { IAction } from 'types/actions'
+import { ITodo } from 'types/state'
+import { isType } from 'utils/actions'
+import { addTodo, toggleTodo } from 'actions/actionCreators'
 
 function todos(todos: ITodo[], action: IAction<any>): ITodo[] {
     if (isType(action, addTodo)) {

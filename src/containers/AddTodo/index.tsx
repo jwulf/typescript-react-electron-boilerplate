@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
-import { IState } from '../../types/state'
-import { addTodo } from '../../actions/actionCreators'
+import { IState } from 'types/state'
+import { addTodo } from 'actions/actionCreators'
 const styles = require('./styles.css')
 
 const mapStateToProps = (state: IState): {nextTodoId: number} => {

@@ -3,8 +3,8 @@ import * as React from 'react' // tslint:disable-line:no-unused-variable
 import { render } from 'react-dom'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import todoApp from './reducers/main'
-import App from './components/App'
+import todoApp from 'reducers/main'
+import App from 'components/App'
 
 declare var module: { hot: any }
 declare var window: { devToolsExtension: any }

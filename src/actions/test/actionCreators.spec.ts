@@ -1,7 +1,7 @@
-import { IAction } from '../../types/actions'
-import { IVisibilityFilter } from '../../types/state'
+import { IAction } from 'types/actions'
+import { IVisibilityFilter } from 'types/state'
 import { expect } from 'chai'
-import * as actions from '../actionCreators'
+import * as actions from 'actions/actionCreators'
 
 describe('Action Creators', () => {
 

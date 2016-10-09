@@ -15,7 +15,7 @@
 //    }
 //
 
-import { IAction } from '../types/actions'
+import { IAction } from 'types/actions'
 
 interface ActionCreator<P> {
   type: string;
