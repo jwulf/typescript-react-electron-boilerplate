@@ -10,6 +10,7 @@ Boilerplate project for building an electron app using React, Redux, Electron an
 * [Install](#install)
 * [Run](#run)
 * [Code Organization](#code-organization)
+* [CSS](#CSS)
 * [Adding Type Definitions](#adding-type-definitions)
 * [Testing](#testing)
 * [Packaging](#packaging)
