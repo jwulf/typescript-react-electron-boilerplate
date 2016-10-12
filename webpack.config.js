@@ -17,18 +17,22 @@ const simpleVars = require('postcss-simple-vars')
 // shared config
 //
 const common = {
+
   target: 'electron-renderer',
   externals: {
-        "7zip": "7zip"
+    "7zip": "7zip"
   },
+
   output: {
     filename: 'bundle.js',
-    path: path.resolve('build/webpack')
+    path: path.resolve('build', 'webpack')
   },
+
   resolve: {
     extensions: ['', '.ts', '.tsx', '.js', '.jsx', '.css'],
     modulesDirectories: ['src', 'node_modules'],
   },
+
   module: {
     loaders: [
       {
@@ -50,18 +54,18 @@ const common = {
       }
     ]
   },
-  postcss: function () {
-        return {
-          plugins: [
-            cssnext({browsers: ['last 1 Chrome versions']}),
-            simpleVars({
-              variables: function () {
-                return require('./src/css-global-vars.js');
-              }
-            })
-          ]
-        };
-  },
+
+  postcss: () => ({
+    plugins: [
+      cssnext({browsers: ['last 1 Chrome versions']}),
+      simpleVars({
+        variables: function () {
+          return require('./src/css-global-vars.js');
+        }
+      })
+    ]
+  }),
+
   plugins: [
     failPlugin,
     new HtmlWebpackPlugin({
@@ -69,6 +73,7 @@ const common = {
       template: path.resolve(__dirname, 'src', 'index.ejs')
     })
   ]
+
 };
 
 //
@@ -76,11 +81,14 @@ const common = {
 //
 if(TARGET === 'server') {
   module.exports = merge(common, {
+
     devtool: 'eval',
+
     entry: [
       'webpack-hot-middleware/client',
       'index.tsx'
     ],
+
     plugins: [
       new WebpackNotifierPlugin(),
       new webpack.HotModuleReplacementPlugin(),
@@ -89,6 +97,7 @@ if(TARGET === 'server') {
         __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true')),
       })
     ]
+
   })
 }
 
@@ -97,14 +106,17 @@ if(TARGET === 'server') {
 //
 if(TARGET === 'prepackage') {
   module.exports = merge(common, {
+
     entry: [
       'index.tsx'
     ],
+
     plugins: [
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production'),
         __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'false')),
       })
     ]
+
   })
 }
