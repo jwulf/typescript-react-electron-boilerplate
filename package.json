@@ -16,7 +16,7 @@
     "lint": "npm run lint-css && npm run lint-ts",
     "test": "cross-env NODE_PATH=./src mocha --opts mocha.opts",
     "test:watch": "npm run test -- --watch",
-    "prepackage": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
+    "prepackage": "cross-env NODE_ENV=production webpack",
     "build-win": "npm run prepackage && electron-packager . --out=build/package/ --prune --overwrite --platform=win32 --arch=x64",
     "build-mac": "npm run prepackage && electron-packager . --out=build/package/ --prune --overwrite --platform=darwin --arch=x64",
     "build-linux": "npm run prepackage && electron-packager . --out=build/package/ --prune --overwrite --platform=linux --arch=x64",
@@ -61,6 +61,7 @@
     "webpack-dev-middleware": "^1.6.1",
     "webpack-fail-plugin": "^1.0.5",
     "webpack-hot-middleware": "^2.12.2",
+    "webpack-merge": "^0.14.1",
     "webpack-notifier": "^1.4.1"
   },
   "dependencies": {
