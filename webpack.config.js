@@ -4,18 +4,18 @@ var merge = require('webpack-merge');
 const webpack = require('webpack');
 const path = require('path');
 
-// webpack plugins
+// awesome-typescript-loader
+const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
+
+// webpack
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
 const failPlugin = require('webpack-fail-plugin');
 
-// postcss plugins
+// postcss
 const cssnext = require('postcss-cssnext');
 const simpleVars = require('postcss-simple-vars')
 
-//
-// shared config
-//
 const common = {
 
   target: 'electron-renderer',
@@ -37,7 +37,7 @@ const common = {
     loaders: [
       {
         test: /\.tsx?$/,
-        loaders: ['ts-loader'],
+        loaders: ['awesome-typescript-loader'],
         include: [path.resolve(__dirname, 'src')]
       },
       {
@@ -76,9 +76,6 @@ const common = {
 
 };
 
-//
-// DEV CONFIG
-//
 if(TARGET === 'server') {
   module.exports = merge(common, {
 
@@ -91,6 +88,7 @@ if(TARGET === 'server') {
 
     plugins: [
       new WebpackNotifierPlugin(),
+      new ForkCheckerPlugin(),
       new webpack.HotModuleReplacementPlugin(),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
@@ -101,9 +99,6 @@ if(TARGET === 'server') {
   })
 }
 
-//
-// PROD CONFIG
-//
 if(TARGET === 'prepackage') {
   module.exports = merge(common, {
 
