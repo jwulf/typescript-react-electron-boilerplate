@@ -2,7 +2,7 @@
 
 Boilerplate project for building an electron app using React, Redux, Electron and Typescript.
 
-[![Build status](https://ci.appveyor.com/api/projects/status/o5rekt4awy1k8xj5?svg=true)](https://ci.appveyor.com/project/xwvvvvwx/typescript-boilerplate)
+[![Build status](https://ci.appveyor.com/api/projects/status/o5rekt4awy1k8xj5/branch/master?svg=true)](https://ci.appveyor.com/project/xwvvvvwx/typescript-boilerplate/branch/master)
 [![Build status](https://travis-ci.org/xwvvvvwx/typescript-react-electron-boilerplate.svg?branch=master)](https://travis-ci.org/xwvvvvwx/typescript-react-electron-boilerplate)
 
 ## Contents
