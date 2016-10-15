@@ -48,7 +48,7 @@
       ]
     },
     "directories": {
-      "buildResources": "resources"
+      "buildResources": "install-resources"
     }
   },
   "devDependencies": {
