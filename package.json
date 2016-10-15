@@ -41,14 +41,14 @@
         }
       ]
     },
-    "win": {
-      "msi": true
-    },
     "linux": {
       "target": [
         "deb",
         "AppImage"
       ]
+    },
+    "directories": {
+      "buildResources": "resources"
     }
   },
   "devDependencies": {
