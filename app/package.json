@@ -1,0 +1,16 @@
+{
+  "name": "typescript_react_electron",
+  "productName": "typescript-react-electron",
+  "version": "0.0.0",
+  "description": "typescript / react / redux / electron boilerplate",
+  "author": "David Terry <davidterry@posteo.de>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xwvvvvwx/typescript-react-electron-boilerplate"
+  },
+  "license": "Unlicense",
+  "main": "./main.js",
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  }
+}

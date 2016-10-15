@@ -1,5 +1,8 @@
 # Build artifacts
-build/
+app/bundle.js
+app/index.html
+app/node_modules/
+dist/
 
 # VS Code files
 *.VC.db*
@@ -8,3 +11,6 @@ build/
 # npm files
 node_modules/
 npm-debug.log
+
+# OS files
+**/*.DS_Store

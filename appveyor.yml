@@ -22,5 +22,5 @@ test_script:
   - npm run test
   - npm run build-win
 artifacts:
-  - path: build/package
+  - path: dist
     name: build

@@ -1,5 +1,9 @@
 const {app, BrowserWindow} = require('electron')
 
+// handle squirrel events:
+// https://github.com/electron/grunt-electron-installer#handling-squirrel-events
+if(require('electron-squirrel-startup')) return;
+
 let win
 
 const installExtenstions = () => {
@@ -26,7 +30,7 @@ function createWindow () {
     win.webContents.openDevTools()
     win.loadURL('http://localhost:3000/')
   } else {
-    win.loadURL(`file://${__dirname}/build/webpack/index.html`)
+    win.loadURL(`file://${__dirname}/index.html`)
   }
 
 
