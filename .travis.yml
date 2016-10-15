@@ -1,13 +1,13 @@
 sudo: false
 
 os:
-- osx
-- linux
+  - osx
+  - linux
 
 addons:
   artifacts:
     paths:
-      - ./builds.tar.gz
+      - "./builds.tar.gz"
   apt:
     sources:
       - ubuntu-toolchain-r-test
@@ -26,21 +26,41 @@ node_js:
 
 cache:
   directories:
-    - node_modules
+  - node_modules
 
 before_install:
-- if [ $TRAVIS_OS_NAME == "linux" ]; then
-    /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16;
-    export CXX="g++-4.9" CC="gcc-4.9" DISPLAY=:99.0;
-    sh -e /etc/init.d/xvfb start; sleep 3;
-  fi
+  - if [ $TRAVIS_OS_NAME == "linux" ]; then /sbin/start-stop-daemon --start --quiet
+    --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb
+    -- :99 -ac -screen 0 1280x1024x16; export CXX="g++-4.9" CC="gcc-4.9" DISPLAY=:99.0;
+    sh -e /etc/init.d/xvfb start; sleep 3; fi
 
 install:
-  - npm install
-  - npm prune
+- npm install
+- npm prune
 
 script: |
   npm run lint &&
   npm run test &&
   npm run build &&
   npm run archive-builds
+
+deploy:
+  provider: releases
+  api_key:
+    secure: BMD1+34oNhvba0i77/JqAejG/LyS4GmIaPItBg8FIptSr5n07q4gqynh4hP15QDEmRPCNdOOLu+LxKc6vCe/ZLr+DgUSNbhKZsShev4IU/GxCuJ/EMSmW10LVqX/Vr4CPDRWtLB5aueMCCnL2piKNzk8IpL3vFxVgE3WgFlbDhmJkHaTb5hg4spgWNq6tVjl0pBrMIoS7ZLOs89cDmdMMZl0eB9VlRsRxV2QGUmaAJfDoI/EGMRxqyGIQmKyDlqaxstfFblxwVhqHlzKFY9Xt/X2me+ezCwC2ZVhPcBVjVT0CPuc0vAgQutKbTjhjBXfV9Ic5K8lf1yxk8kmDeVRkxA8D1vXBwcyprqN9UBYFyKk96MJqhWnkZRNoCGOexH6YPwJEZdOUBm57GiyUvAolR0/PaY+jEWLzojyGrNlKi7OfTZrnBuFnBUJJky7CJlI9VVENj3kEF/SKoi17Wokf80tTHnFTirBffl7COdrK0k5ugddOD53iyT8eVfRr1LPCQOKrzqDhxuY4gnzvWOwW6UlYqBP7JXxxzaskP2Z8GfkogrOIVvPsIpo5tFhs52hc82XXB5af9vDQn3rVJWGyqL5y20YIaD85t+Yf19lt4hAS3jm92/zYWXuBQ9nTwUbjsX0iL6JA0M8XglWs2fh93uCyO77pSvkV+Kstb4ItXM=
+  file_glob: true
+  file: "dist/**/*.dmg"
+  on:
+    repo: xwvvvvwx/typescript-react-electron-boilerplate
+    tags: true
+    condition: $TRAVIS_OS_NAME = osx
+
+  provider: releases
+  api_key:
+    secure: BMD1+34oNhvba0i77/JqAejG/LyS4GmIaPItBg8FIptSr5n07q4gqynh4hP15QDEmRPCNdOOLu+LxKc6vCe/ZLr+DgUSNbhKZsShev4IU/GxCuJ/EMSmW10LVqX/Vr4CPDRWtLB5aueMCCnL2piKNzk8IpL3vFxVgE3WgFlbDhmJkHaTb5hg4spgWNq6tVjl0pBrMIoS7ZLOs89cDmdMMZl0eB9VlRsRxV2QGUmaAJfDoI/EGMRxqyGIQmKyDlqaxstfFblxwVhqHlzKFY9Xt/X2me+ezCwC2ZVhPcBVjVT0CPuc0vAgQutKbTjhjBXfV9Ic5K8lf1yxk8kmDeVRkxA8D1vXBwcyprqN9UBYFyKk96MJqhWnkZRNoCGOexH6YPwJEZdOUBm57GiyUvAolR0/PaY+jEWLzojyGrNlKi7OfTZrnBuFnBUJJky7CJlI9VVENj3kEF/SKoi17Wokf80tTHnFTirBffl7COdrK0k5ugddOD53iyT8eVfRr1LPCQOKrzqDhxuY4gnzvWOwW6UlYqBP7JXxxzaskP2Z8GfkogrOIVvPsIpo5tFhs52hc82XXB5af9vDQn3rVJWGyqL5y20YIaD85t+Yf19lt4hAS3jm92/zYWXuBQ9nTwUbjsX0iL6JA0M8XglWs2fh93uCyO77pSvkV+Kstb4ItXM=
+  file_glob: true
+  file: "dist/**/*.AppImage"
+  on:
+    repo: xwvvvvwx/typescript-react-electron-boilerplate
+    tags: true
+    condition: $TRAVIS_OS_NAME = linux
