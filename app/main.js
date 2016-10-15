@@ -1,5 +1,9 @@
 const {app, BrowserWindow} = require('electron')
 
+// handle squirrel events:
+// https://github.com/electron/grunt-electron-installer#handling-squirrel-events
+if(require('electron-squirrel-startup')) return;
+
 let win
 
 const installExtenstions = () => {
