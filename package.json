@@ -18,6 +18,7 @@
     "test:watch": "npm run test -- --watch",
     "prepackage": "cross-env NODE_ENV=production webpack",
     "package": "npm run prepackage && build --dir",
+    "build": "npm run prepackage && build --x64",
     "build-mac": "npm run prepackage && build --mac --x64",
     "build-win": "npm run prepackage && build --win --x64",
     "build-linux": "npm run prepackage && build --linux --x64",
