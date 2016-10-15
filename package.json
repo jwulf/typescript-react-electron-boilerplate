@@ -40,7 +40,6 @@
       ]
     },
     "win": {
-      "remoteReleases": true
     },
     "linux": {
       "target": [
