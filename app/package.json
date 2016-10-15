@@ -2,7 +2,7 @@
   "name": "typescript-react-electron",
   "version": "0.0.0",
   "description": "typescript / react / redux / electron boilerplate",
-  "author": "David Terry",
+  "author": "David Terry <davidterry@posteo.de>",
   "repository": {
     "type": "git",
     "url": "https://github.com/xwvvvvwx/typescript-react-electron-boilerplate"
