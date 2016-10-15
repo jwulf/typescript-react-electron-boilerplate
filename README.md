@@ -165,7 +165,7 @@ $ npm run build
 
 **Notes**
 - Installers are output to the dist directory
-- Installer config lives in the application [`package.json`](https://github.com/xwvvvvwx/typescript-react-electron-boilerplate/blob/master/package.json)
+- Installer config lives in the application [`package.json`](https://github.com/xwvvvvwx/typescript-react-electron-boilerplate/blob/master/package.json#L27)
 - `npm run build` builds installer for the platform that it is executed from
 - Uses [`Electron Builder`](https://github.com/electron-userland/electron-builder)
 - Installers use [`Squirrel`](https://github.com/Squirrel)
