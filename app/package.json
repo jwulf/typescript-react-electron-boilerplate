@@ -1,5 +1,6 @@
 {
-  "name": "typescript-react-electron",
+  "name": "typescript_react_electron",
+  "productName": "typescript-react-electron",
   "version": "0.0.0",
   "description": "typescript / react / redux / electron boilerplate",
   "author": "David Terry <davidterry@posteo.de>",
