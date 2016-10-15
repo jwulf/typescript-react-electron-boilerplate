@@ -41,6 +41,7 @@
       ]
     },
     "win": {
+      "msi": true
     },
     "linux": {
       "target": [
