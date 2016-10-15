@@ -20,7 +20,7 @@ test_script:
   - npm --version
   - npm run lint
   - npm run test
-  - npm run build-win
+  - npm run dist
 artifacts:
-  - path: build/package
+  - path: dist
     name: build

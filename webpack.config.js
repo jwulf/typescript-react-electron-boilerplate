@@ -25,7 +25,7 @@ const common = {
 
   output: {
     filename: 'bundle.js',
-    path: path.resolve('build', 'webpack')
+    path: path.resolve('app')
   },
 
   resolve: {

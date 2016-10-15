@@ -3,9 +3,10 @@
     "stylelint.enable": true,
     "typescript.tsdk": "node_modules/typescript/lib",
     "files.exclude": {
-        "build/": true,
         "**/._*": true,
         "**/*.VC.db*": true,
-        "node_modules": true
+        "node_modules": true,
+        "app/node_modules": true,
+        "dist": true
     }
 }

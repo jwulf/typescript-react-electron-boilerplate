@@ -26,7 +26,7 @@ function createWindow () {
     win.webContents.openDevTools()
     win.loadURL('http://localhost:3000/')
   } else {
-    win.loadURL(`file://${__dirname}/build/webpack/index.html`)
+    win.loadURL(`file://${__dirname}/index.html`)
   }
 
 

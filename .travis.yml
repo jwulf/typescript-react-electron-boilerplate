@@ -13,9 +13,6 @@ cache:
     - node_modules
 
 addons:
-  artifacts:
-    paths:
-      - ./builds.tar.gz
   apt:
     sources:
       - ubuntu-toolchain-r-test
@@ -40,6 +37,4 @@ before_script:
 script: |
   npm run lint &&
   npm run test &&
-  npm run build-mac &&
-  npm run build-linux &&
-  npm run archive-builds
+  npm run dist

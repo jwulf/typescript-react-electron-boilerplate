@@ -7,9 +7,9 @@
     "url": "https://github.com/xwvvvvwx/typescript-react-electron-boilerplate"
   },
   "license": "Unlicense",
-  "main": "main.js",
+  "main": "app/main.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development electron .",
+    "start": "cross-env NODE_ENV=development electron app",
     "server": "node dev-server.js",
     "lint-css": "stylelint \"src/**/*.css\"",
     "lint-ts": "tslint \"src/**/*.ts?(x)\"",
@@ -17,11 +17,35 @@
     "test": "cross-env NODE_PATH=./src mocha --opts mocha.opts",
     "test:watch": "npm run test -- --watch",
     "prepackage": "cross-env NODE_ENV=production webpack",
-    "build-win": "npm run prepackage && electron-packager . --out=build/package/ --prune --overwrite --platform=win32 --arch=x64",
-    "build-mac": "npm run prepackage && electron-packager . --out=build/package/ --prune --overwrite --platform=darwin --arch=x64",
-    "build-linux": "npm run prepackage && electron-packager . --out=build/package/ --prune --overwrite --platform=linux --arch=x64",
-    "build-all": "npm run prepackage && electron-packager . --out=build/package/ --prune --overwrite --platform=win32,darwin,linux --arch=x64",
-    "archive-builds": "tar -zcf builds.tar.gz build/package"
+    "pack": "npm run prepackage && build --dir",
+    "dist": "npm run prepackage && build"
+  },
+  "build": {
+    "appId": "org.xwvvvvwx.typescript-boilerplate",
+    "dmg": {
+      "contents": [
+        {
+          "x": 410,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 130,
+          "y": 150,
+          "type": "file"
+        }
+      ]
+    },
+    "win": {
+      "remoteReleases": true
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "AppImage"
+      ]
+    }
   },
   "devDependencies": {
     "@types/chai": "^3.4.32",
@@ -38,9 +62,9 @@
     "css-loader": "^0.25.0",
     "devtron": "^1.3.0",
     "electron": "^1.3.4",
+    "electron-builder": "^7.13.0",
     "electron-debug": "^1.0.1",
     "electron-devtools-installer": "^2.0.1",
-    "electron-packager": "^7.7.0",
     "enzyme": "^2.4.1",
     "express": "^4.14.0",
     "html-webpack-plugin": "^2.22.0",
