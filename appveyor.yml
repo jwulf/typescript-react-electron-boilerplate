@@ -1,7 +1,9 @@
 os: unstable
+
 environment:
   matrix:
     - nodejs_version: 6
+
 install:
   - ps: Install-Product node $env:nodejs_version
   - set CI=true
@@ -9,18 +11,36 @@ install:
   - set PATH=%APPDATA%\npm;%PATH%
   - npm install
   - npm prune
+
 matrix:
   fast_finish: true
+
 build: off
+
 version: '{build}'
+
 shallow_clone: true
+
 clone_depth: 1
+
 test_script:
   - node --version
   - npm --version
   - npm run lint
   - npm run test
   - npm run build-win
+
 artifacts:
   - path: dist
     name: build
+
+deploy:
+  release: myproduct-v$(appveyor_build_version)
+  description: 'Release description'
+  provider: GitHub
+  auth_token:
+    secure: qE+5WRfVkubiHj2DvefhUO9ZLfecWmC4s3Kq3nrovq7fkrKrTIxcLLi/nONmloWt
+  artifact: /.*\.exe/
+  on:
+    branch: master
+    appveyor_repo_tag: true
