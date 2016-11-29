@@ -46,10 +46,10 @@
         "deb",
         "AppImage"
       ]
-    },
-    "directories": {
-      "buildResources": "install-resources"
     }
+  },
+  "directories": {
+    "buildResources": "install-resources"
   },
   "devDependencies": {
     "@types/chai": "^3.4.32",
