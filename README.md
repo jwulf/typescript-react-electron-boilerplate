@@ -1,5 +1,7 @@
 # Typescript - React - Redux - Electron Boilerplate
 
+[https://blog.dcpos.ch/how-to-make-your-electron-app-sexy](https://blog.dcpos.ch/how-to-make-your-electron-app-sexy)
+
 Boilerplate project for building an electron app using React, Redux, Electron and Typescript.
 
 [![Build status](https://ci.appveyor.com/api/projects/status/o5rekt4awy1k8xj5/branch/master?svg=true)](https://ci.appveyor.com/project/xwvvvvwx/typescript-boilerplate/branch/master)
